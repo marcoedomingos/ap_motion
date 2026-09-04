@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <linearGradient id="bgCyanBlue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e6fff"/>
+      <stop offset="45%" stop-color="#0284c7"/>
+      <stop offset="85%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0066cc"/>
+    </linearGradient>
+    <linearGradient id="cyanTextGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00f7ff"/>
+      <stop offset="100%" stop-color="#26de81"/>
+    </linearGradient>
+    <filter id="textDepth" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#002b66" flood-opacity="0.6"/>
+    </filter>
+    <filter id="cameraShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="-10" dy="25" stdDeviation="24" flood-color="#001833" flood-opacity="0.65"/>
+    </filter>
+  </defs>
+
+  <!-- Background Gradient -->
+  <rect width="1920" height="1080" fill="url(#bgCyanBlue)"/>
+
+  <!-- Subtle grid texture / technical lines in background -->
+  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="270" x2="1920" y2="270"/>
+    <line x1="0" y1="540" x2="1920" y2="540"/>
+    <line x1="0" y1="810" x2="1920" y2="810"/>
+    <line x1="480" y1="0" x2="480" y2="1080"/>
+    <line x1="960" y1="0" x2="960" y2="1080"/>
+    <line x1="1440" y1="0" x2="1440" y2="1080"/>
+  </g>
+
+  <!-- Left Side: Typography Suite -->
+  <g transform="translate(180, 110)" filter="url(#textDepth)">
+    <!-- 3D "10" (White Front with extruded depth) -->
+    <!-- Extrusion sides -->
+    <g id="extruded-10">
+      <!-- 1 Depth -->
+      <path d="M 230 140 L 290 90 L 320 90 L 260 140 Z" fill="#b0bec5"/>
+      <path d="M 230 140 L 230 460 L 170 510 L 170 190 Z" fill="#78909c"/>
+      <path d="M 330 460 L 330 140 L 390 90 L 390 410 Z" fill="#90a4ae"/>
+      <path d="M 170 510 L 330 510 L 390 460 L 230 460 Z" fill="#546e7a"/>
+      <!-- Front "1" -->
+      <path d="M 230 190 L 290 140 L 330 140 L 330 460 L 230 460 Z" fill="#ffffff"/>
+
+      <!-- "0" Depth -->
+      <path d="M 400 240 C 400 130 470 70 570 70 C 670 70 740 130 740 240 L 740 360 C 740 470 670 530 570 530 C 470 530 400 470 400 360 Z" fill="#78909c"/>
+      <!-- Front "0" -->
+      <path d="M 450 240 C 450 150 510 100 590 100 C 670 100 730 150 730 240 L 730 360 C 730 450 670 500 590 500 C 510 500 450 450 450 360 Z" fill="#ffffff"/>
+      <!-- Inner hole -->
+      <ellipse cx="590" cy="300" rx="60" ry="110" fill="#0284c7"/>
+    </g>
+
+    <!-- "Dicas" in Bright Cyan next to "10" -->
+    <text x="760" y="360" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="144" fill="#00f7ff" letter-spacing="-2">
+      Dicas
+    </text>
+
+    <!-- "Para ter Vídeos" -->
+    <text x="150" y="580" font-family="'Playfair Display', Georgia, serif" font-weight="bold" font-style="italic" font-size="82" fill="#ffffff" letter-spacing="1">
+      Para ter Vídeos
+    </text>
+
+    <!-- "Super Editados" -->
+    <g transform="translate(110, 770)">
+      <!-- "Super" in glowing bright cyan bold -->
+      <text x="0" y="0" font-family="'Plus Jakarta Sans', Impact, sans-serif" font-weight="900" font-size="172" fill="#00f7ff" letter-spacing="-2">
+        Super
+      </text>
+      <!-- "Editados" in elegant white serif -->
+      <text x="500" y="-15" font-family="'Playfair Display', Georgia, serif" font-weight="900" font-style="italic" font-size="108" fill="#ffffff">
+        Editados
+      </text>
+    </g>
+  </g>
+
+  <!-- Right Side: Professional Studio Cinema Camera -->
+  <g id="cinema-camera" transform="translate(1380, 480)" filter="url(#cameraShadow)">
+    <!-- Tripod / Base Mount -->
+    <rect x="-80" y="260" width="340" height="40" rx="8" fill="#1e293b"/>
+    <rect x="0" y="300" width="180" height="70" rx="10" fill="#0f172a"/>
+
+    <!-- Matte Box Lens Hood (Huge rectangular front with flare) -->
+    <g transform="translate(-180, -70)">
+      <polygon points="0,0 260,0 230,340 -30,340" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="4"/>
+      <!-- Front Glass Lens Aperture -->
+      <rect x="20" y="25" width="180" height="290" rx="14" fill="#0f2942" stroke="#38bdf8" stroke-width="4"/>
+      <!-- Lens reflection blue glass -->
+      <polygon points="30,35 150,35 70,305 30,305" fill="#38bdf8" opacity="0.35"/>
+      <ellipse cx="110" cy="170" rx="70" ry="70" fill="#0369a1" opacity="0.4"/>
+      <ellipse cx="110" cy="170" rx="40" ry="40" fill="#0284c7" opacity="0.5"/>
+    </g>
+
+    <!-- Lens Barrel Rings (White & Ribbed Rubber) -->
+    <g transform="translate(70, -30)">
+      <!-- Ring 1 Focus -->
+      <rect x="0" y="0" width="65" height="260" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+      <line x1="20" y1="0" x2="20" y2="260" stroke="#334155" stroke-width="3" stroke-dasharray="8 6"/>
+      <!-- Ring 2 Zoom with black ribbing -->
+      <rect x="65" y="10" width="95" height="240" rx="6" fill="#0f172a"/>
+      <line x1="85" y1="10" x2="85" y2="250" stroke="#475569" stroke-width="4" stroke-dasharray="5 5"/>
+      <line x1="115" y1="10" x2="115" y2="250" stroke="#475569" stroke-width="4" stroke-dasharray="5 5"/>
+      <line x1="140" y1="10" x2="140" y2="250" stroke="#475569" stroke-width="4" stroke-dasharray="5 5"/>
+      <!-- Ring 3 Mount -->
+      <rect x="160" y="20" width="50" height="220" rx="6" fill="#e2e8f0"/>
+    </g>
+
+    <!-- Camera Main Body (Pure White Matte Studio Chassis) -->
+    <g transform="translate(260, -80)">
+      <rect x="0" y="0" width="320" height="320" rx="28" fill="#ffffff" stroke="#cbd5e1" stroke-width="3"/>
+      <!-- Side cooling vents & audio dials -->
+      <rect x="50" y="40" width="220" height="80" rx="8" fill="#0f172a"/>
+      <circle cx="85" cy="80" r="16" fill="#ef4444"/>
+      <circle cx="135" cy="80" r="16" fill="#94a3b8"/>
+      <circle cx="185" cy="80" r="16" fill="#94a3b8"/>
+      <circle cx="235" cy="80" r="16" fill="#38bdf8"/>
+      <!-- Battery Pack on Back -->
+      <rect x="270" y="40" width="60" height="240" rx="10" fill="#1e293b"/>
+      <!-- Side handle mount -->
+      <path d="M 70 160 L 250 160 L 250 260 L 70 260 Z" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+      <text x="160" y="220" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="24" fill="#0f172a" text-anchor="middle" letter-spacing="2">4K CINEMA</text>
+    </g>
+
+    <!-- Top Handle with Shotgun Microphone -->
+    <g transform="translate(20, -220)">
+      <!-- Top Handle Arm -->
+      <path d="M 60 120 L 60 40 L 360 40 L 360 120" fill="none" stroke="#ffffff" stroke-width="28" stroke-linecap="round"/>
+      <path d="M 120 40 L 300 40" stroke="#0f172a" stroke-width="32" stroke-linecap="round"/>
+      
+      <!-- Shockmount Bracket for Mic -->
+      <rect x="-80" y="20" width="40" height="50" fill="#334155"/>
+      <circle cx="-60" cy="45" r="26" fill="none" stroke="#ef4444" stroke-width="5"/>
+      
+      <!-- Shotgun Microphone with Black Foam Windscreen -->
+      <rect x="-260" y="20" width="360" height="52" rx="26" fill="#0a0f1d"/>
+      <rect x="-260" y="20" width="310" height="52" rx="26" fill="#182238"/>
+      <!-- Texture lines on foam -->
+      <line x1="-200" y1="20" x2="-200" y2="72" stroke="#2c3a58" stroke-width="4"/>
+      <line x1="-150" y1="20" x2="-150" y2="72" stroke="#2c3a58" stroke-width="4"/>
+      <line x1="-100" y1="20" x2="-100" y2="72" stroke="#2c3a58" stroke-width="4"/>
+      <line x1="-50" y1="20" x2="-50" y2="72" stroke="#2c3a58" stroke-width="4"/>
+    </g>
+  </g>
+
+  <!-- Bottom Right: Geometric AP Monogram Logo -->
+  <g transform="translate(1620, 840)" filter="url(#textDepth)">
+    <path d="M 0 140 L 70 0 L 140 140 L 100 140 L 70 75 L 40 140 Z" fill="#000000"/>
+    <path d="M 80 15 L 140 15 C 175 15 195 35 195 70 C 195 105 175 125 140 125 L 110 125 L 110 95 L 140 95 C 155 95 165 85 165 70 C 165 55 155 45 140 45 L 95 45 Z" fill="#000000"/>
+  </g>
+</svg>

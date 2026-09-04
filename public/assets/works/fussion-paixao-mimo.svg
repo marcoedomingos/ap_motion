@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <linearGradient id="sandBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b88448"/>
+      <stop offset="40%" stop-color="#d49b56"/>
+      <stop offset="70%" stop-color="#e2aa68"/>
+      <stop offset="100%" stop-color="#f0bf80"/>
+    </linearGradient>
+    <linearGradient id="fussionTube" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f1c40f"/>
+      <stop offset="45%" stop-color="#f9ca24"/>
+      <stop offset="80%" stop-color="#f0932b"/>
+      <stop offset="100%" stop-color="#b76e10"/>
+    </linearGradient>
+    <linearGradient id="paixaoRed" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#67000d"/>
+      <stop offset="35%" stop-color="#99001a"/>
+      <stop offset="70%" stop-color="#7a0014"/>
+      <stop offset="100%" stop-color="#4d000c"/>
+    </linearGradient>
+    <linearGradient id="herbWhite" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e8e8e8"/>
+      <stop offset="40%" stop-color="#ffffff"/>
+      <stop offset="85%" stop-color="#f0ece9"/>
+      <stop offset="100%" stop-color="#d6cfcb"/>
+    </linearGradient>
+    <radialGradient id="productShadow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#2c1a0c" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#2c1a0c" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="textDrop" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1080" height="1080" fill="url(#sandBg)"/>
+
+  <!-- Typography Top -->
+  <!-- "Cuidado pessoal é o mínimo" -->
+  <text x="50" y="160" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="70" fill="#ffffff" filter="url(#textDrop)">
+    Cuidado pessoal é o mínimo
+  </text>
+
+  <!-- Big "Mas" and "Esses produtos são um mimo" -->
+  <g transform="translate(190, 340)">
+    <!-- "Mas" in warm beige serif display -->
+    <text x="0" y="0" font-family="'Playfair Display', Georgia, serif" font-weight="900" font-size="190" fill="#f8e0be" filter="url(#textDrop)">
+      Mas
+    </text>
+    <!-- "Esses produtos" -->
+    <text x="380" y="-85" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="52" fill="#ffffff" filter="url(#textDrop)">
+      Esses produtos
+    </text>
+    <!-- "são um mimo" -->
+    <text x="380" y="-20" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="52" fill="#ffffff" filter="url(#textDrop)">
+      são um mimo
+    </text>
+  </g>
+
+  <!-- Call to action: "PEÇA JÁ O SEU" & "943 703 425" -->
+  <g transform="translate(350, 480)">
+    <text x="0" y="0" font-family="'Playfair Display', Georgia, serif" font-weight="900" font-size="78" fill="#ffffff" letter-spacing="2" filter="url(#textDrop)">
+      PEÇA JÁ O SEU
+    </text>
+    <!-- Phone number -->
+    <text x="325" y="105" font-family="'Plus Jakarta Sans', Impact, sans-serif" font-weight="900" font-size="94" fill="#a04400" letter-spacing="1">
+      943 703 425
+    </text>
+  </g>
+
+  <!-- Ground Shadows -->
+  <ellipse cx="110" cy="1040" rx="140" ry="25" fill="url(#productShadow)"/>
+  <ellipse cx="450" cy="1030" rx="340" ry="30" fill="url(#productShadow)"/>
+  <ellipse cx="880" cy="1035" rx="200" ry="25" fill="url(#productShadow)"/>
+
+  <!-- Left: Fussion Cream & Oil Yellow Tube -->
+  <g id="fussion-tube" transform="translate(0, 380)">
+    <!-- Tube Body -->
+    <path d="M -40 0 L 220 0 L 205 600 C 205 660 160 700 90 700 C 20 700 -25 660 -25 600 Z" fill="url(#fussionTube)"/>
+    <!-- Top Crimp -->
+    <rect x="-40" y="0" width="260" height="24" fill="#d49b10"/>
+    <!-- Gold Arabesque Filigree Medallion -->
+    <g transform="translate(90, 380)" stroke="#925c04" stroke-width="2.5" fill="none">
+      <circle cx="0" cy="0" r="50"/>
+      <circle cx="0" cy="0" r="40" stroke-dasharray="3 3"/>
+      <path d="M 0 -40 C -15 -20 -15 20 0 40 C 15 20 15 -20 0 -40"/>
+      <path d="M -40 0 C -20 -15 20 -15 40 0 C 20 15 -20 15 -40 0"/>
+    </g>
+    <!-- Drop icon -->
+    <path d="M 90 100 C 80 120 70 135 70 150 C 70 165 79 175 90 175 C 101 175 110 165 110 150 C 110 135 100 120 90 100 Z" fill="#925c04"/>
+    <!-- Labels -->
+    <text x="90" y="210" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="28" fill="#1b1207" text-anchor="middle" letter-spacing="1">FUSSION</text>
+    <text x="90" y="235" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="bold" font-size="14" fill="#1b1207" text-anchor="middle" letter-spacing="2">CREAM &amp; OIL</text>
+    <text x="90" y="300" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="bold" font-size="18" fill="#1b1207" text-anchor="middle" letter-spacing="4">ORIENTAL</text>
+    <text x="90" y="550" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="bold" font-size="15" fill="#1b1207" text-anchor="middle">deliplus</text>
+  </g>
+
+  <!-- Center Group: 5 Red Paixão Bottles (Grouped realistically) -->
+  <!-- Back Row Bottles -->
+  <g transform="translate(230, 520)">
+    <rect x="0" y="50" width="90" height="220" rx="35" fill="#4d000c"/>
+    <rect x="25" y="0" width="40" height="60" rx="8" fill="#2d0007"/>
+  </g>
+  <g transform="translate(430, 520)">
+    <rect x="0" y="50" width="90" height="220" rx="35" fill="#4d000c"/>
+    <rect x="25" y="0" width="40" height="60" rx="8" fill="#2d0007"/>
+  </g>
+  <g transform="translate(530, 530)">
+    <rect x="0" y="50" width="90" height="210" rx="35" fill="#4d000c"/>
+    <rect x="25" y="0" width="40" height="60" rx="8" fill="#2d0007"/>
+  </g>
+  <!-- Front Row Main 2 Paixão Bottles -->
+  <!-- Bottle 1 Front Left -->
+  <g transform="translate(195, 570)" filter="url(#textDrop)">
+    <!-- Cap -->
+    <rect x="85" y="0" width="45" height="50" rx="10" fill="#58000f"/>
+    <!-- Shoulder & Body with classic Paixão bottle silhouette -->
+    <path d="M 85 45 C 50 70 20 120 20 180 L 20 400 C 20 440 50 460 110 460 C 170 460 200 440 200 400 L 200 180 C 200 120 170 70 135 45 Z" fill="url(#paixaoRed)"/>
+    <!-- Specular light sheen -->
+    <path d="M 35 180 L 35 400 C 35 420 50 440 75 445 L 75 160 C 50 165 35 170 35 180 Z" fill="#ffffff" opacity="0.18"/>
+    <!-- Labels -->
+    <text x="110" y="270" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="12" fill="#e0a875" text-anchor="middle">Loção</text>
+    <text x="110" y="288" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="10" fill="#e0a875" text-anchor="middle">Deo Hidratante</text>
+    <text x="110" y="335" font-family="'Playfair Display', Georgia, serif" font-weight="900" font-size="34" fill="#e0a875" text-anchor="middle" letter-spacing="1">PAIXÃO</text>
+    <text x="75" y="375" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="bold" font-size="16" fill="#e0a875">24h</text>
+    <text x="110" y="415" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="13" fill="#e0a875" text-anchor="middle" letter-spacing="1">TENTADORA</text>
+  </g>
+  <!-- Bottle 2 Front Right -->
+  <g transform="translate(390, 570)" filter="url(#textDrop)">
+    <!-- Cap -->
+    <rect x="85" y="0" width="45" height="50" rx="10" fill="#58000f"/>
+    <!-- Body -->
+    <path d="M 85 45 C 50 70 20 120 20 180 L 20 400 C 20 440 50 460 110 460 C 170 460 200 440 200 400 L 200 180 C 200 120 170 70 135 45 Z" fill="url(#paixaoRed)"/>
+    <!-- Specular light sheen -->
+    <path d="M 35 180 L 35 400 C 35 420 50 440 75 445 L 75 160 C 50 165 35 170 35 180 Z" fill="#ffffff" opacity="0.18"/>
+    <!-- Labels -->
+    <text x="110" y="270" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="12" fill="#e0a875" text-anchor="middle">Loção</text>
+    <text x="110" y="288" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="10" fill="#e0a875" text-anchor="middle">Deo Hidratante</text>
+    <text x="110" y="335" font-family="'Playfair Display', Georgia, serif" font-weight="900" font-size="34" fill="#e0a875" text-anchor="middle" letter-spacing="1">PAIXÃO</text>
+    <text x="75" y="375" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="bold" font-size="16" fill="#e0a875">24h</text>
+    <text x="110" y="415" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="13" fill="#e0a875" text-anchor="middle" letter-spacing="1">TENTADORA</text>
+  </g>
+
+  <!-- Right: 3 White Herbíssimo Tubes -->
+  <g transform="translate(620, 660)" filter="url(#textDrop)">
+    <!-- Tube 1 -->
+    <g transform="translate(0, 0)">
+      <path d="M 0 30 L 190 30 L 175 360 C 175 390 145 410 95 410 C 45 410 15 390 15 360 Z" fill="url(#herbWhite)"/>
+      <rect x="0" y="15" width="190" height="18" fill="#d0c7c0"/>
+      <!-- Herbíssimo Branding -->
+      <text x="95" y="115" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="25" fill="#1b4d3e" text-anchor="middle">Herbíssimo</text>
+      <text x="155" y="130" font-family="'Playfair Display', Georgia, serif" font-style="italic" font-size="17" fill="#b0305c">Care</text>
+      <text x="95" y="165" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="bold" font-size="10" fill="#2d3436" text-anchor="middle">Creme Desodorante</text>
+      <text x="95" y="180" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="10" fill="#2d3436" text-anchor="middle">Antitranspirante</text>
+      <rect x="25" y="210" width="140" height="40" rx="6" fill="#f8d7da"/>
+      <text x="95" y="226" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="bold" font-size="9" fill="#721c24" text-anchor="middle">Rosa Mosqueta</text>
+      <text x="95" y="240" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="9" fill="#721c24" text-anchor="middle">e Niacinamida</text>
+    </g>
+    <!-- Tube 2 Behind Right -->
+    <g transform="translate(170, -20)">
+      <path d="M 0 30 L 180 30 L 165 360 C 165 390 140 410 90 410 C 40 410 15 390 15 360 Z" fill="url(#herbWhite)"/>
+      <rect x="0" y="15" width="180" height="18" fill="#d0c7c0"/>
+      <text x="90" y="115" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="24" fill="#1b4d3e" text-anchor="middle">Herbíssimo</text>
+      <text x="145" y="130" font-family="'Playfair Display', Georgia, serif" font-style="italic" font-size="17" fill="#b0305c">Care</text>
+    </g>
+    <!-- Tube 3 Behind Far Right -->
+    <g transform="translate(320, -10)">
+      <path d="M 0 30 L 180 30 L 165 360 C 165 390 140 410 90 410 C 40 410 15 390 15 360 Z" fill="url(#herbWhite)"/>
+      <rect x="0" y="15" width="180" height="18" fill="#d0c7c0"/>
+      <text x="90" y="115" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="24" fill="#1b4d3e" text-anchor="middle">Herbíssimo</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350" width="1080" height="1350">
+  <defs>
+    <linearGradient id="ribbonGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f39c12"/>
+      <stop offset="35%" stop-color="#f1c40f"/>
+      <stop offset="70%" stop-color="#ffeaa7"/>
+      <stop offset="100%" stop-color="#d48806"/>
+    </linearGradient>
+    <linearGradient id="ribbonDark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#995e00"/>
+      <stop offset="100%" stop-color="#5a3800"/>
+    </linearGradient>
+    <filter id="ribbonShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Split Background: Top Black, Bottom Yellow -->
+  <rect width="1080" height="1350" fill="#000000"/>
+  <!-- Curved Yellow Lower Section -->
+  <path d="M 0 680 C 350 620 700 480 1080 440 L 1080 1350 L 0 1350 Z" fill="#fabc05"/>
+
+  <!-- Top Right Text Block on Black -->
+  <g transform="translate(600, 220)">
+    <text x="0" y="0" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="34" fill="#ffffff" letter-spacing="0.2">
+      Tu és importante, tu és
+    </text>
+    <text x="0" y="44" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="34" fill="#ffffff" letter-spacing="0.2">
+      especial, tu és único, tu és
+    </text>
+    <text x="0" y="88" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="34" fill="#ffffff" letter-spacing="0.2">
+      grande
+    </text>
+    <!-- Thin Gold Accent Line -->
+    <line x1="0" y1="125" x2="440" y2="125" stroke="#d48806" stroke-width="2.5"/>
+  </g>
+
+  <!-- Large Majestic Yellow Ribbon -->
+  <g filter="url(#ribbonShadow)">
+    <!-- Back Loop Inside -->
+    <path d="M 230 40 C 360 40 460 140 470 280 C 475 370 430 450 360 520 L 260 620 C 220 660 180 700 130 730 L 120 735" fill="url(#ribbonDark)"/>
+    
+    <!-- Left Curve from Top Outer -->
+    <path d="M 230 40 C 130 40 40 140 30 280 C 20 420 120 560 210 650 L 520 960 C 650 1090 850 1200 1080 1240 L 1080 1350 C 780 1300 560 1150 420 1020 L 130 730 C 50 630 -10 480 0 310 C 10 130 110 0 230 0 C 340 0 430 80 470 190 L 410 230 C 380 140 310 40 230 40 Z" fill="url(#ribbonGrad)"/>
+    
+    <!-- Front Overlapping Ribbon Crossing -->
+    <path d="M 370 200 C 430 280 450 380 390 470 L 240 680 C 180 760 100 830 0 880 L 0 760 C 80 720 140 650 190 580 L 330 380 C 360 330 365 270 330 220 Z" fill="url(#ribbonGrad)"/>
+    
+    <!-- Highlight Sheen Layer -->
+    <path d="M 230 20 C 130 20 50 120 40 260 C 30 360 90 480 180 570 L 330 720 L 350 700 L 200 550 C 110 460 60 350 70 260 C 80 140 140 40 230 40 Z" fill="#ffffff" opacity="0.25"/>
+  </g>
+
+  <!-- Big Typography: Setembro Amarelo -->
+  <g transform="translate(230, 890)" filter="url(#ribbonShadow)">
+    <text x="0" y="0" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="140" fill="#000000" letter-spacing="-3">
+      Se<tspan fill="#ffffff">tem</tspan>bro
+    </text>
+    <text x="0" y="115" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="140" fill="#ffffff" letter-spacing="-3">
+      Amare<tspan fill="#000000">lo</tspan>
+    </text>
+  </g>
+
+  <!-- Subtitle bottom -->
+  <g transform="translate(230, 1075)">
+    <text x="0" y="0" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="34" fill="#ffffff" letter-spacing="-0.5" filter="url(#ribbonShadow)">
+      A vida vale a pena ser vivida e tu importas
+    </text>
+  </g>
+</svg>

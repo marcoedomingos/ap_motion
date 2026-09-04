@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Architectural Studio Neutral Tokens */
+    --bg-void: #090A0C;
+    --bg-canvas: #F7F8FA;
+    --border-hairline: #E4E4E7;
+    --text-ink: #09090B;
+    --text-muted: #71717A;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--bg-canvas);
+    color: var(--text-ink);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.03em;
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Subtle Studio Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4D4D8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A1A1AA;
+}
+
+/* ─── STUDIO BACKGROUND PATTERN (CLEAN ARCHITECTURAL DOTS) ───── */
+
+.bg-dot-grid-reference {
+  background-color: #F7F8FA;
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ─── 3D PERSPECTIVE UTILITIES ───────────────────────────────── */
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+

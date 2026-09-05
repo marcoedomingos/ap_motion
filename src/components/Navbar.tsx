@@ -21,6 +21,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
   const navLinks = [
     { label: 'Início', id: 'inicio' },
     { label: 'Reels (9:16)', id: 'reels' },
+    { label: 'Flyers', id: 'flyers' },
     { label: 'Contacto', id: 'contacto' },
   ];
 

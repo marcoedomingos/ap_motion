@@ -18,6 +18,13 @@ export const ReelsCarousel: React.FC<ReelsCarouselProps> = ({
   const [canScrollRight, setCanScrollRight] = useState(true);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
+  // Mouse drag-to-scroll state
+  const isMouseDownRef = useRef(false);
+  const startXRef = useRef(0);
+  const scrollLeftStartRef = useRef(0);
+  const dragMovedRef = useRef(false);
+  const [isDragging, setIsDragging] = useState(false);
+
   // Filter 9:16 projects and prioritize video projects
   const verticalProjects = projects.filter(
     (p) => p.aspectRatio === '9:16' || p.category === 'edited-videos' || p.category === 'motion-design'
@@ -45,8 +52,37 @@ export const ReelsCarousel: React.FC<ReelsCarouselProps> = ({
 
   const scroll = (direction: 'left' | 'right') => {
     if (!scrollRef.current) return;
-    const scrollAmount = direction === 'left' ? -320 : 320;
+    const scrollAmount = direction === 'left' ? -360 : 360;
     scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  };
+
+  // Drag to scroll handlers for desktop mouse interaction
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!scrollRef.current) return;
+    isMouseDownRef.current = true;
+    dragMovedRef.current = false;
+    startXRef.current = e.pageX - scrollRef.current.offsetLeft;
+    scrollLeftStartRef.current = scrollRef.current.scrollLeft;
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isMouseDownRef.current || !scrollRef.current) return;
+    const x = e.pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startXRef.current) * 1.4;
+    if (Math.abs(walk) > 4) {
+      dragMovedRef.current = true;
+      setIsDragging(true);
+    }
+    scrollRef.current.scrollLeft = scrollLeftStartRef.current - walk;
+  };
+
+  const handleMouseUpOrLeave = () => {
+    if (!isMouseDownRef.current) return;
+    isMouseDownRef.current = false;
+    setTimeout(() => {
+      setIsDragging(false);
+      dragMovedRef.current = false;
+    }, 60);
   };
 
   return (
@@ -97,11 +133,21 @@ export const ReelsCarousel: React.FC<ReelsCarouselProps> = ({
           </div>
         </div>
 
-        {/* ── 9:16 HORIZONTAL TRACK ── */}
+        {/* ── 9:16 HORIZONTAL TRACK (Fluid, Butter-Smooth & Drag-Enabled) ── */}
         <div
           ref={scrollRef}
-          className="flex gap-4 sm:gap-5 overflow-x-auto pb-4 pt-1 snap-x snap-mandatory scrollbar-none select-none"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUpOrLeave}
+          onMouseLeave={handleMouseUpOrLeave}
+          className={`flex gap-4 sm:gap-5 overflow-x-auto pb-4 pt-1 scrollbar-none select-none ${
+            isDragging ? 'cursor-grabbing' : 'cursor-grab active:cursor-grabbing'
+          }`}
+          style={{
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none',
+            WebkitOverflowScrolling: 'touch',
+          }}
         >
           {verticalProjects.map((project) => {
             const isHovered = hoveredId === project.id;
@@ -110,13 +156,14 @@ export const ReelsCarousel: React.FC<ReelsCarouselProps> = ({
               <div
                 key={project.id}
                 onClick={() => {
+                  if (isDragging || dragMovedRef.current) return;
                   if (project.mediaType === 'video') {
                     onPlayVideo(project);
                   } else {
                     onOpenDetail(project);
                   }
                 }}
-                className="flex flex-col gap-2.5 shrink-0 snap-start cursor-pointer group"
+                className="flex flex-col gap-2.5 shrink-0 cursor-pointer group"
               >
                 {/* ── 100% CLEAN VIDEO CARD ── */}
                 <div

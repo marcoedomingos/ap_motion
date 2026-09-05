@@ -9,6 +9,7 @@ import { Project } from './types';
 import { Navbar } from './components/Navbar';
 import { SimpleImageCarousel } from './components/SimpleImageCarousel';
 import { ReelsCarousel } from './components/ReelsCarousel';
+import { FlyersSection } from './components/FlyersSection';
 import { VideoPlayerModal } from './components/VideoPlayerModal';
 import { ProjectDetailModal } from './components/ProjectDetailModal';
 import { ContactSection } from './components/ContactSection';
@@ -58,7 +59,13 @@ export default function App() {
           onOpenDetail={handleOpenDetail}
         />
 
-        {/* 3. Direct Contact & WhatsApp */}
+        {/* 3. Flyers Comerciais & Design Gráfico (All passed flyer artworks) */}
+        <FlyersSection
+          projects={PROJECTS}
+          onOpenDetail={handleOpenDetail}
+        />
+
+        {/* 4. Direct Contact & WhatsApp */}
         <ContactSection />
       </main>
 

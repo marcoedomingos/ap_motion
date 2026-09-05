@@ -73,6 +73,7 @@ export const SimpleImageCarousel: React.FC<SimpleImageCarouselProps> = ({
   });
 
   const [currentIndex, setCurrentIndex] = useState(2); // Center on item 3 like reference
+  const [isDragging, setIsDragging] = useState(false);
 
   const total = items.length;
 
@@ -91,11 +92,11 @@ export const SimpleImageCarousel: React.FC<SimpleImageCarouselProps> = ({
   };
 
   return (
-    <section id="inicio" className="relative w-full bg-white text-zinc-950 pt-16 sm:pt-20 pb-12 px-4 sm:px-6 overflow-hidden select-none border-b border-zinc-200/80">
+    <section id="inicio" className="relative w-full bg-white text-zinc-950 pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 px-4 sm:px-6 overflow-hidden select-none border-b border-zinc-200/80">
       <div className="max-w-[1300px] mx-auto flex flex-col items-center">
         
         {/* Editorial Location / Status Tag */}
-        <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 border border-zinc-200 text-[11px] font-mono font-medium text-zinc-600 mb-3">
+        <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-100 border border-zinc-200 text-[11px] font-mono font-medium text-zinc-600 mb-4">
           <span className="w-1.5 h-1.5 rounded-full bg-zinc-950" />
           <span>Luanda, AO • Estúdio disponível para projetos</span>
         </div>
@@ -168,10 +169,24 @@ export const SimpleImageCarousel: React.FC<SimpleImageCarouselProps> = ({
                 }}
                 transition={{
                   type: 'spring',
-                  stiffness: 260,
-                  damping: 28,
+                  stiffness: 340,
+                  damping: 32,
+                  mass: 0.85,
+                }}
+                drag={isCenter ? 'x' : false}
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={0.2}
+                onDragStart={() => setIsDragging(true)}
+                onDragEnd={(_, info) => {
+                  setTimeout(() => setIsDragging(false), 50);
+                  if (info.offset.x > 45 || info.velocity.x > 250) {
+                    handlePrev();
+                  } else if (info.offset.x < -45 || info.velocity.x < -250) {
+                    handleNext();
+                  }
                 }}
                 onClick={() => {
+                  if (isDragging) return;
                   if (!isCenter) {
                     setCurrentIndex(index);
                   } else if (item.project) {
@@ -182,9 +197,9 @@ export const SimpleImageCarousel: React.FC<SimpleImageCarouselProps> = ({
                     }
                   }
                 }}
-                className={`absolute w-[290px] sm:w-[480px] md:w-[620px] lg:w-[680px] aspect-[16/10] rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer transition-all duration-300 border border-zinc-200/80 ${
+                className={`absolute w-[290px] sm:w-[480px] md:w-[620px] lg:w-[680px] aspect-[16/10] rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer border border-zinc-200/80 transition-[box-shadow,border-color] duration-200 ${
                   isCenter
-                    ? 'shadow-2xl shadow-zinc-900/15 ring-1 ring-black/5 hover:scale-[1.01]'
+                    ? 'shadow-2xl shadow-zinc-900/15 ring-1 ring-black/5 active:cursor-grabbing'
                     : 'shadow-md shadow-zinc-900/5 hover:opacity-100'
                 }`}
               >

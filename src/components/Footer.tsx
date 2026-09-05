@@ -10,6 +10,7 @@ export const Footer: React.FC = () => {
   const links = [
     { label: 'Início', id: 'inicio' },
     { label: 'Reels (9:16)', id: 'reels' },
+    { label: 'Flyers', id: 'flyers' },
     { label: 'Contacto', id: 'contacto' },
   ];
 

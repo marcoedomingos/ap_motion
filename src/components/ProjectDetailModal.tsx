@@ -122,7 +122,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
           onClick={(e) => e.stopPropagation()}
         >
           {/* 1. Artwork Stage */}
-          <div className="relative w-full rounded-2xl md:rounded-3xl overflow-hidden bg-black/90 border border-white/[0.14] shadow-[0_30px_90px_rgba(0,0,0,0.9)] flex items-center justify-center h-[58vh] sm:h-[62vh] md:h-[65vh] max-h-[640px]">
+          <div className="relative w-full rounded-2xl md:rounded-3xl overflow-hidden bg-black/90 border border-white/[0.14] shadow-[0_30px_90px_rgba(0,0,0,0.9)] flex items-center justify-center h-[50vh] sm:h-[54vh] md:h-[58vh] max-h-[560px]">
             {project.mediaType === 'image' && modalImgSrc ? (
               <img
                 src={modalImgSrc}

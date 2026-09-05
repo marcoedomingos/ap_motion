@@ -305,8 +305,8 @@ export const VideoPlayerModal: React.FC<VideoPlayerModalProps> = ({
             onClick={togglePlay}
             className={`relative w-full rounded-2xl md:rounded-3xl overflow-hidden bg-black/90 border border-white/[0.14] shadow-[0_30px_90px_rgba(0,0,0,0.9)] flex items-center justify-center cursor-pointer transition-all duration-300 ${
               isVertical
-                ? 'h-[58vh] sm:h-[62vh] md:h-[65vh] max-h-[640px]'
-                : 'aspect-video max-h-[65vh]'
+                ? 'h-[50vh] sm:h-[54vh] md:h-[58vh] max-h-[560px]'
+                : 'aspect-video max-h-[58vh]'
             }`}
           >
             {/* The Video Element */}

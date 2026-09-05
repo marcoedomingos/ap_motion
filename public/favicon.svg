@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="none">
+  <rect width="160" height="160" rx="36" fill="#09090b"/>
+  <!-- AP Monogram Logo -->
+  <path
+    d="M 22 120 L 62 26 L 82 60 H 124 C 138 60 146 69 146 79 C 146 89 138 98 124 98 H 96 V 136"
+    stroke="#ffffff"
+    stroke-width="12"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M 76 68 L 96 98"
+    stroke="#ffffff"
+    stroke-width="12"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>

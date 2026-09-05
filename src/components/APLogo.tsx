@@ -24,27 +24,44 @@ export const APLogo: React.FC<APLogoProps> = ({
         />
       )}
       <svg
-        viewBox="0 0 160 160"
+        viewBox="0 0 120 120"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className={`w-full h-full relative z-10 transition-transform duration-300 ${
           animated ? 'hover:scale-105' : ''
         }`}
       >
-        {/* Geometric AP Monogram - exact replica from AP brand collateral */}
+        {/* Geometric AP Monogram - exact replica of the user-provided brand mark */}
+        {/* Left leg of A: from (24, 88) up to apex (56, 20) */}
         <path
-          d="M 20 120 L 60 26 L 80 60 H 122 C 136 60 144 69 144 79 C 144 89 136 98 122 98 H 94 V 136"
+          d="M 24 88 L 56 20 L 88 88"
           stroke="currentColor"
-          strokeWidth="11"
+          strokeWidth="10"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="opacity-0"
+        />
+        
+        {/* Continuous AP single-stroke path */}
+        {/* 1. Left leg up: (24, 88) -> (56, 20) */}
+        {/* 2. Right leg down to midpoint: (56, 20) -> (72, 54) */}
+        {/* 3. Bowl of P extending right & looping: -> (96, 54) arc to (96, 76) -> (72, 76) */}
+        {/* 4. Vertical stem of P dropping down: -> (72, 104) */}
+        {/* Combined unified stroke */}
+        <path
+          d="M 26 88 L 58 22 L 74 54 H 92 C 104 54 104 74 92 74 H 74 V 106"
+          stroke="currentColor"
+          strokeWidth="9"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
+        
+        {/* Internal horizontal bar linking the A apex crossbar cleanly */}
         <path
-          d="M 74 68 L 94 98"
+          d="M 64 54 H 74"
           stroke="currentColor"
-          strokeWidth="11"
+          strokeWidth="9"
           strokeLinecap="round"
-          strokeLinejoin="round"
         />
       </svg>
     </div>

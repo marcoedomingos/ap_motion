@@ -475,7 +475,7 @@ export const VideoPlayerModal: React.FC<VideoPlayerModalProps> = ({
               {/* Actions: Direct WhatsApp CTA + Stepper */}
               <div className="flex items-center gap-2 sm:gap-3 shrink-0">
                 <a
-                  href={`https://wa.me/244943703425?text=${whatsappMessage}`}
+                  href={`https://wa.me/244950723170?text=${whatsappMessage}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white hover:bg-zinc-200 text-zinc-950 font-bold text-xs transition-all shadow-md active:scale-95 cursor-pointer"

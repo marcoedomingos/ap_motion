@@ -8,15 +8,15 @@ export const FloatingWhatsApp: React.FC = () => {
 
   return (
     <div className="fixed bottom-5 right-5 z-40 flex items-center gap-2 group">
-      {/* Refined WhatsApp Action */}
+      {/* Refined WhatsApp Action - Secondary White Button on Primary Black */}
       <a
-        href="https://wa.me/244943703425?text=Ol%C3%A1%20AP%20Motion%2C%20gostaria%20de%20conversar%20sobre%20um%20projecto%20de%20motion%20design."
+        href="https://wa.me/244950723170?text=Ol%C3%A1%20AP%20Motion%2C%20gostaria%20de%20conversar%20sobre%20um%20projecto%20de%20motion%20design."
         target="_blank"
         rel="noopener noreferrer"
         aria-label="WhatsApp Direto"
-        className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-black font-semibold text-xs tracking-tight shadow-md transition-all duration-200 active:scale-95 border border-black/10"
+        className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white hover:bg-zinc-200 text-black font-bold text-xs tracking-tight shadow-2xl transition-all duration-200 active:scale-95"
       >
-        <MessageCircle size={15} className="fill-black text-transparent shrink-0" />
+        <MessageCircle size={15} className="fill-black text-black shrink-0" />
         <span>WhatsApp</span>
       </a>
 

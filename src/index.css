@@ -7,12 +7,12 @@
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
 
-    /* Architectural Studio Neutral Tokens */
-    --bg-void: #090A0C;
-    --bg-canvas: #F7F8FA;
-    --border-hairline: #E4E4E7;
-    --text-ink: #09090B;
-    --text-muted: #71717A;
+    /* Architectural Studio Neutral Tokens - Primary: Black, Secondary: White */
+    --bg-void: #000000;
+    --bg-canvas: #000000;
+    --border-hairline: #27272A;
+    --text-ink: #FFFFFF;
+    --text-muted: #A1A1AA;
   }
 
   body {
@@ -39,7 +39,7 @@
   }
 }
 
-/* Subtle Studio Scrollbar */
+/* Subtle Studio Scrollbar - Dark Theme */
 ::-webkit-scrollbar {
   width: 4px;
   height: 4px;
@@ -50,19 +50,19 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #D4D4D8;
+  background: #27272A;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #A1A1AA;
+  background: #3F3F46;
 }
 
 /* ─── STUDIO BACKGROUND PATTERN (CLEAN ARCHITECTURAL DOTS) ───── */
 
 .bg-dot-grid-reference {
-  background-color: #F7F8FA;
-  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.07) 1px, transparent 1px);
+  background-color: #000000;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 

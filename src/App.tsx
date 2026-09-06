@@ -12,6 +12,7 @@ import { ReelsCarousel } from './components/ReelsCarousel';
 import { FlyersSection } from './components/FlyersSection';
 import { VideoPlayerModal } from './components/VideoPlayerModal';
 import { ProjectDetailModal } from './components/ProjectDetailModal';
+import { FAQSection } from './components/FAQSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
@@ -39,7 +40,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F7F8FA] text-zinc-950 relative selection:bg-zinc-950 selection:text-white">
+    <div className="min-h-screen bg-black text-white relative selection:bg-white selection:text-black">
       {/* Top Navbar */}
       <Navbar onNavigate={handleNavigate} />
 
@@ -65,7 +66,10 @@ export default function App() {
           onOpenDetail={handleOpenDetail}
         />
 
-        {/* 4. Direct Contact & WhatsApp */}
+        {/* 4. Perguntas que normalmente fazem (FAQ) */}
+        <FAQSection />
+
+        {/* 5. Direct Contact & WhatsApp */}
         <ContactSection />
       </main>
 

@@ -28,30 +28,30 @@ export const FlyersSection: React.FC<FlyersSectionProps> = ({ projects, onOpenDe
   const filteredFlyers = uniqueFlyers.filter((flyer) => {
     if (selectedTag === 'all') return true;
     if (selectedTag === 'campanha') {
-      return flyer.id.includes('setembro') || flyer.tags.some(t => t.toLowerCase().includes('campanha') || t.toLowerCase().includes('conscientização'));
+      return flyer.id.includes('setembro') || flyer.id.includes('talento') || flyer.tags.some(t => t.toLowerCase().includes('campanha') || t.toLowerCase().includes('inspiracional'));
     }
     if (selectedTag === 'comercial') {
-      return flyer.id.includes('fussion') || flyer.id.includes('imobiliaria') || flyer.id.includes('dicas');
+      return flyer.id.includes('fussion') || flyer.id.includes('imobiliaria') || flyer.id.includes('dicas') || flyer.id.includes('maca');
     }
     if (selectedTag === 'institucional') {
-      return flyer.id.includes('coral') || flyer.id.includes('identidade') || flyer.tags.some(t => t.toLowerCase().includes('oficial'));
+      return flyer.id.includes('coral') || flyer.id.includes('identidade') || flyer.id.includes('workflow') || flyer.tags.some(t => t.toLowerCase().includes('oficial'));
     }
     return true;
   });
 
   return (
-    <section id="flyers" className="relative py-12 sm:py-16 px-4 sm:px-6 md:px-8 max-w-[1400px] mx-auto text-zinc-950 border-b border-zinc-200/80">
+    <section id="flyers" className="relative py-12 sm:py-16 px-4 sm:px-6 md:px-8 max-w-[1400px] mx-auto text-white border-b border-white/10 bg-black">
       {/* ── HEADER ── */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-10 gap-4">
         <div>
-          <div className="flex items-center gap-2 text-[11px] font-mono tracking-widest text-zinc-500 uppercase mb-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-zinc-900" />
+          <div className="flex items-center gap-2 text-[11px] font-mono tracking-widest text-zinc-400 uppercase mb-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-white" />
             <span>Flyers &amp; Design Gráfico</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-extrabold text-zinc-950 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-extrabold text-white tracking-tight">
             Flyers Comerciais &amp; Cartazes
           </h2>
-          <p className="text-zinc-500 text-xs sm:text-sm mt-1 max-w-xl leading-relaxed">
+          <p className="text-zinc-400 text-xs sm:text-sm mt-1 max-w-xl leading-relaxed">
             Peças publicitárias, campanhas de impacto e artes digitais concebidas com tipografia cuidada e alta autoridade visual.
           </p>
         </div>
@@ -64,10 +64,10 @@ export const FlyersSection: React.FC<FlyersSectionProps> = ({ projects, onOpenDe
               <button
                 key={tab.value}
                 onClick={() => setSelectedTag(tab.value)}
-                className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all cursor-pointer whitespace-nowrap ${
+                className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all cursor-pointer whitespace-nowrap ${
                   isActive
-                    ? 'bg-zinc-950 text-white shadow-xs'
-                    : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200 hover:text-zinc-950'
+                    ? 'bg-white text-black font-bold shadow-xs'
+                    : 'bg-zinc-900 text-zinc-400 border border-white/10 hover:bg-zinc-800 hover:text-white'
                 }`}
               >
                 {tab.label}
@@ -89,7 +89,7 @@ export const FlyersSection: React.FC<FlyersSectionProps> = ({ projects, onOpenDe
               className="group flex flex-col gap-3 cursor-pointer select-none"
             >
               {/* Card Media Wrapper */}
-              <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden bg-zinc-950 border border-zinc-200 group-hover:border-zinc-950 transition-all duration-300 shadow-sm group-hover:shadow-xl">
+              <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden bg-zinc-950 border border-white/10 group-hover:border-white/40 transition-all duration-300 shadow-sm group-hover:shadow-2xl">
                 {imgSrc ? (
                   <img
                     src={imgSrc}
@@ -104,21 +104,21 @@ export const FlyersSection: React.FC<FlyersSectionProps> = ({ projects, onOpenDe
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-zinc-100 text-zinc-400">
+                  <div className="w-full h-full flex items-center justify-center bg-zinc-900 text-zinc-500">
                     Sem imagem
                   </div>
                 )}
 
                 {/* Floating Tag Overlay */}
                 {flyer.highlight && (
-                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-[10px] font-mono font-medium text-white shadow-xs">
+                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-[10px] font-mono font-medium text-white shadow-xs">
                     {flyer.highlight}
                   </div>
                 )}
 
                 {/* Hover Expand Action Button */}
-                <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center p-4">
-                  <div className="flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white/90 backdrop-blur-md text-zinc-950 font-bold text-xs shadow-xl transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center p-4">
+                  <div className="flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white text-black font-bold text-xs shadow-xl transform translate-y-2 group-hover:translate-y-0 transition-transform">
                     <Maximize2 size={13} />
                     <span>Ver Arte Completa</span>
                   </div>
@@ -127,15 +127,15 @@ export const FlyersSection: React.FC<FlyersSectionProps> = ({ projects, onOpenDe
 
               {/* Card Metadata */}
               <div className="px-0.5">
-                <div className="flex items-center justify-between text-[11px] font-mono text-zinc-400 mb-1">
-                  <span className="font-medium text-zinc-600 truncate">{flyer.client}</span>
+                <div className="flex items-center justify-between text-[11px] font-mono text-zinc-500 mb-1">
+                  <span className="font-medium text-zinc-400 truncate">{flyer.client}</span>
                   <span>{flyer.year}</span>
                 </div>
-                <h3 className="text-sm font-bold text-zinc-900 line-clamp-1 group-hover:text-zinc-600 transition-colors">
+                <h3 className="text-sm font-bold text-white line-clamp-1 group-hover:text-zinc-300 transition-colors">
                   {flyer.title}
                 </h3>
                 {flyer.subtitle && (
-                  <p className="text-xs text-zinc-500 line-clamp-1 mt-0.5">
+                  <p className="text-xs text-zinc-400 line-clamp-1 mt-0.5">
                     {flyer.subtitle}
                   </p>
                 )}

@@ -724,18 +724,18 @@ function drawFussionPreview(ctx: CanvasRenderingContext2D, w: number, h: number,
   ctx.beginPath();
   ctx.roundRect(bannerX, bannerY, bannerW, bannerH, [12]);
   ctx.fill();
-  ctx.strokeStyle = '#10b981';
+  ctx.strokeStyle = '#000000';
   ctx.lineWidth = 2;
   ctx.stroke();
 
   ctx.textAlign = 'center';
-  ctx.fillStyle = '#065f46';
+  ctx.fillStyle = '#52525b';
   ctx.font = 'bold 11px "Outfit", sans-serif';
   ctx.fillText('PEÇA JÁ O SEU', w * 0.5, bannerY + 18);
 
-  ctx.fillStyle = '#059669';
+  ctx.fillStyle = '#000000';
   ctx.font = '900 15px "Outfit", sans-serif';
-  ctx.fillText('📞 943 703 425', w * 0.5, bannerY + 36);
+  ctx.fillText('📞 950 723 170', w * 0.5, bannerY + 36);
 }
 
 function drawImobiliariaPreview(ctx: CanvasRenderingContext2D, w: number, h: number, t: number) {

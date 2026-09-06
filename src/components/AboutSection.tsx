@@ -14,29 +14,29 @@ export const AboutSection: React.FC = () => {
   ];
 
   const stats = [
-    { value: '100%', label: 'Dedicação', color: '#6C63FF' },
-    { value: 'Rápido', label: 'Atendimento', color: '#00F5FF' },
-    { value: '4K/HD', label: 'Qualidade', color: '#F5B731' },
+    { value: '100%', label: 'Dedicação', color: '#000000' },
+    { value: 'Rápido', label: 'Atendimento', color: '#000000' },
+    { value: '4K/HD', label: 'Qualidade', color: '#000000' },
   ];
 
   const advantages = [
     {
-      icon: <CheckCircle2 size={16} className="text-emerald-400" />,
+      icon: <CheckCircle2 size={16} className="text-black" />,
       title: 'Comunicação Directa',
       desc: 'Alinhamento contínuo pelo WhatsApp para aprovações ágeis e sem burocracia.',
     },
     {
-      icon: <Clock size={16} className="text-[#6C63FF]" />,
+      icon: <Clock size={16} className="text-black" />,
       title: 'Pontualidade',
       desc: 'Prazos rigorosamente cumpridos com ficheiros exportados nas medidas exactas.',
     },
     {
-      icon: <Zap size={16} className="text-[#F5B731]" />,
+      icon: <Zap size={16} className="text-black" />,
       title: 'Alta Qualidade',
       desc: 'Produções em 4K e HD com motion design profissional de nível internacional.',
     },
     {
-      icon: <Globe size={16} className="text-[#00F5FF]" />,
+      icon: <Globe size={16} className="text-black" />,
       title: 'Atendimento Global',
       desc: 'Servimos Angola e clientes internacionais com entrega remota completa.',
     },

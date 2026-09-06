@@ -118,7 +118,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-3 pt-1">
               <a
-                href="https://wa.me/244943703425?text=Ol%C3%A1%20AP%20Motion%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20motion%20design."
+                href="https://wa.me/244950723170?text=Ol%C3%A1%20AP%20Motion%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20motion%20design."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider bg-slate-900 hover:bg-black text-white transition-all shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 cursor-pointer"

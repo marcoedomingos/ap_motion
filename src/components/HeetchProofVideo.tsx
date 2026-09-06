@@ -169,7 +169,7 @@ export const HeetchProofVideo: React.FC<HeetchProofVideoProps> = ({
               <button
                 onClick={toggleMute}
                 className={`p-1.5 rounded-lg transition-colors ${
-                  !isMuted ? 'bg-pink-500/20 text-pink-400 border border-pink-500/30' : 'bg-zinc-800 text-zinc-400'
+                  !isMuted ? 'bg-white/20 text-white border border-white/30' : 'bg-zinc-800 text-zinc-400'
                 }`}
                 title={isMuted ? 'Ativar Áudio Oficial' : 'Silenciar'}
               >
@@ -183,13 +183,13 @@ export const HeetchProofVideo: React.FC<HeetchProofVideoProps> = ({
 
             {/* Direct CTA */}
             <a
-              href={`https://wa.me/244943703425?text=${encodeURIComponent(
+              href={`https://wa.me/244950723170?text=${encodeURIComponent(
                 'Olá AP Motion! Assisti ao vídeo comercial da Heetch Angola ("Precisa de destaque? Motion designs é a solução") e gostaria de solicitar um orçamento para a minha marca.'
               )}`}
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-semibold text-xs transition-colors shadow-xs"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white hover:bg-zinc-200 text-black font-semibold text-xs transition-colors shadow-xs"
             >
               <span>Pedir Vídeo Similar</span>
             </a>

@@ -58,14 +58,14 @@
     </text>
   </g>
 
-  <!-- Call to action: "PEÇA JÁ O SEU" & "943 703 425" -->
+  <!-- Call to action: "PEÇA JÁ O SEU" & "950 723 170" -->
   <g transform="translate(350, 480)">
     <text x="0" y="0" font-family="'Playfair Display', Georgia, serif" font-weight="900" font-size="78" fill="#ffffff" letter-spacing="2" filter="url(#textDrop)">
       PEÇA JÁ O SEU
     </text>
     <!-- Phone number -->
     <text x="325" y="105" font-family="'Plus Jakarta Sans', Impact, sans-serif" font-weight="900" font-size="94" fill="#a04400" letter-spacing="1">
-      943 703 425
+      950 723 170
     </text>
   </g>
 

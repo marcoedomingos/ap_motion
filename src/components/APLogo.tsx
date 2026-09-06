@@ -20,7 +20,7 @@ export const APLogo: React.FC<APLogoProps> = ({
     >
       {glow && (
         <div
-          className="absolute inset-0 rounded-full blur-md opacity-40 bg-sky-500/30 scale-125 pointer-events-none transition-opacity duration-300"
+          className="absolute inset-0 rounded-full blur-md opacity-20 bg-black/10 scale-125 pointer-events-none transition-opacity duration-300"
         />
       )}
       <svg

@@ -15,9 +15,10 @@ export interface Project {
   videoUrl?: string;
   posterUrl?: string;
   imageUrl?: string;
+  images?: string[];
   fallbackSvg?: string;
   isUploadedWork?: boolean;
-  videoType?: 'yango' | 'heetch' | 'fussion' | 'imobiliaria' | 'matchbox' | 'ap-intro' | 'ao-ponto' | 'setembro-promo';
+  videoType?: 'yango' | 'heetch' | 'fussion' | 'imobiliaria' | 'matchbox' | 'ap-intro' | 'ao-ponto' | 'setembro-promo' | 'talento-envolvido';
   duration?: string;
   dimensions: string;
   year: string;

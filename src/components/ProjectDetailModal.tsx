@@ -27,10 +27,17 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
   if (!project) return null;
 
   const [modalImgSrc, setModalImgSrc] = useState(project.imageUrl || project.fallbackSvg);
+  const [slideIndex, setSlideIndex] = useState(0);
 
   useEffect(() => {
+    setSlideIndex(0);
     setModalImgSrc(project.imageUrl || project.fallbackSvg);
   }, [project.imageUrl, project.fallbackSvg, project.id]);
+
+  const hasMultipleSlides = Boolean(project.images && project.images.length > 1);
+  const activeImgSrc = hasMultipleSlides
+    ? project.images![slideIndex]
+    : (modalImgSrc || project.imageUrl || project.fallbackSvg);
 
   // Keyboard navigation
   useEffect(() => {
@@ -123,18 +130,72 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
         >
           {/* 1. Artwork Stage */}
           <div className="relative w-full rounded-2xl md:rounded-3xl overflow-hidden bg-black/90 border border-white/[0.14] shadow-[0_30px_90px_rgba(0,0,0,0.9)] flex items-center justify-center h-[50vh] sm:h-[54vh] md:h-[58vh] max-h-[560px]">
-            {project.mediaType === 'image' && modalImgSrc ? (
-              <img
-                src={modalImgSrc}
-                alt={project.title}
-                referrerPolicy="no-referrer"
-                onError={() => {
-                  if (project.fallbackSvg && modalImgSrc !== project.fallbackSvg) {
-                    setModalImgSrc(project.fallbackSvg);
-                  }
-                }}
-                className="w-full h-full object-contain select-none"
-              />
+            {project.mediaType === 'image' && activeImgSrc ? (
+              <div className="relative w-full h-full flex items-center justify-center">
+                <img
+                  key={activeImgSrc}
+                  src={activeImgSrc}
+                  alt={`${project.title}${hasMultipleSlides ? ` — Lâmina ${slideIndex + 1}` : ''}`}
+                  referrerPolicy="no-referrer"
+                  onError={() => {
+                    if (project.fallbackSvg && activeImgSrc !== project.fallbackSvg) {
+                      setModalImgSrc(project.fallbackSvg);
+                    }
+                  }}
+                  className="w-full h-full object-contain select-none"
+                />
+
+                {/* Carrossel Navigation Controls */}
+                {hasMultipleSlides && project.images && (
+                  <>
+                    {/* Top Right Counter Badge */}
+                    <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-xs font-mono font-semibold text-white shadow-lg pointer-events-none">
+                      Lâmina {slideIndex + 1} de {project.images.length}
+                    </div>
+
+                    {/* Previous Slide Button */}
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSlideIndex((prev) => (prev - 1 + project.images!.length) % project.images!.length);
+                      }}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/70 hover:bg-black/90 text-white border border-white/20 flex items-center justify-center backdrop-blur-md transition-all cursor-pointer shadow-lg active:scale-95 z-20"
+                      aria-label="Lâmina anterior"
+                    >
+                      <ChevronLeft size={20} />
+                    </button>
+
+                    {/* Next Slide Button */}
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSlideIndex((prev) => (prev + 1) % project.images!.length);
+                      }}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/70 hover:bg-black/90 text-white border border-white/20 flex items-center justify-center backdrop-blur-md transition-all cursor-pointer shadow-lg active:scale-95 z-20"
+                      aria-label="Próxima lâmina"
+                    >
+                      <ChevronRight size={20} />
+                    </button>
+
+                    {/* Dot Indicators */}
+                    <div className="absolute bottom-3 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/20 shadow-lg z-20">
+                      {project.images.map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setSlideIndex(idx);
+                          }}
+                          className={`h-2 rounded-full transition-all cursor-pointer ${
+                            idx === slideIndex ? 'w-6 bg-white' : 'w-2 bg-white/40 hover:bg-white/80'
+                          }`}
+                          aria-label={`Ir para lâmina ${idx + 1}`}
+                        />
+                      ))}
+                    </div>
+                  </>
+                )}
+              </div>
             ) : (
               <div className="relative w-full h-full bg-zinc-950 flex items-center justify-center group">
                 {project.posterUrl && (

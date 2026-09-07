@@ -76,14 +76,36 @@ export const SimpleImageCarousel: React.FC<SimpleImageCarouselProps> = ({
         </div>
 
         {/* ── HEADER ── */}
-        <div className="text-center mb-6 sm:mb-8 max-w-3xl">
+        <div className="text-center mb-6 max-w-3xl">
           <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white font-display mb-2">
             Motion, Design and Video Editing
           </h1>
           
-          <p className="text-xs sm:text-sm text-zinc-400 font-medium max-w-lg mx-auto leading-relaxed">
+          <p className="text-xs sm:text-sm text-zinc-400 font-medium max-w-lg mx-auto leading-relaxed mb-6">
             Transformamos as suas ideias em resultados de alto impacto com motion design, design visual e edição de vídeo comercial.
           </p>
+
+          {/* Quick Actions */}
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            {onPlayVideo && (
+              <button
+                onClick={() => {
+                  const main = projects.find((p) => p.isProofOfProduct || p.highlight === 'Vídeo Principal') || projects[0];
+                  if (main) onPlayVideo(main);
+                }}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-black text-xs sm:text-sm font-bold shadow-lg hover:bg-zinc-200 transition-all cursor-pointer active:scale-95"
+              >
+                <Play size={13} className="fill-black" />
+                <span>Ver Reel Principal</span>
+              </button>
+            )}
+            <a
+              href="#reels"
+              className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white text-xs sm:text-sm font-medium border border-white/10 transition-all cursor-pointer"
+            >
+              <span>Ver Portfólio 9:16</span>
+            </a>
+          </div>
         </div>
 
         {/* ── 5-CARD STACKED CAROUSEL CONTAINER ── */}

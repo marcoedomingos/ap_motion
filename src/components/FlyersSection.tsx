@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Maximize2, Sparkles, ArrowUpRight } from 'lucide-react';
+import { Maximize2, Sparkles, ArrowUpRight, Layers } from 'lucide-react';
 import { Project } from '../types';
 
 interface FlyersSectionProps {
@@ -14,13 +14,13 @@ export const FlyersSection: React.FC<FlyersSectionProps> = ({ projects, onOpenDe
   );
 
   // De-duplicate in case of multiple matches
-  const uniqueFlyers = Array.from(new Map(flyers.map((item) => [item.id, item])).values());
+  const uniqueFlyers: Project[] = Array.from(new Map<string, Project>(flyers.map((item) => [item.id, item])).values());
 
   const [selectedTag, setSelectedTag] = useState<string>('all');
 
   const filterTags = [
     { label: 'Todos os Flyers', value: 'all' },
-    { label: 'Campanhas', value: 'campanha' },
+    { label: 'Campanhas & Carrosséis', value: 'campanha' },
     { label: 'Comercial & Vendas', value: 'comercial' },
     { label: 'Institucional', value: 'institucional' },
   ];
@@ -28,10 +28,10 @@ export const FlyersSection: React.FC<FlyersSectionProps> = ({ projects, onOpenDe
   const filteredFlyers = uniqueFlyers.filter((flyer) => {
     if (selectedTag === 'all') return true;
     if (selectedTag === 'campanha') {
-      return flyer.id.includes('setembro') || flyer.id.includes('talento') || flyer.tags.some(t => t.toLowerCase().includes('campanha') || t.toLowerCase().includes('inspiracional'));
+      return flyer.id.includes('setembro') || flyer.id.includes('talento') || flyer.tags.some(t => t.toLowerCase().includes('campanha') || t.toLowerCase().includes('carrossel') || t.toLowerCase().includes('inspiracional'));
     }
     if (selectedTag === 'comercial') {
-      return flyer.id.includes('fussion') || flyer.id.includes('imobiliaria') || flyer.id.includes('dicas') || flyer.id.includes('maca');
+      return flyer.id.includes('fussion') || flyer.id.includes('dicas') || flyer.id.includes('maca') || flyer.tags.some(t => t.toLowerCase().includes('comercial') || t.toLowerCase().includes('vendas'));
     }
     if (selectedTag === 'institucional') {
       return flyer.id.includes('coral') || flyer.id.includes('identidade') || flyer.id.includes('workflow') || flyer.tags.some(t => t.toLowerCase().includes('oficial'));
@@ -113,6 +113,14 @@ export const FlyersSection: React.FC<FlyersSectionProps> = ({ projects, onOpenDe
                 {flyer.highlight && (
                   <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-[10px] font-mono font-medium text-white shadow-xs">
                     {flyer.highlight}
+                  </div>
+                )}
+
+                {/* Carrossel Multi-slide Indicator */}
+                {flyer.images && flyer.images.length > 1 && (
+                  <div className="absolute top-3 right-3 px-2 py-1 rounded-full bg-black/80 backdrop-blur-md border border-amber-500/30 text-[10px] font-mono font-medium text-amber-400 flex items-center gap-1 shadow-xs">
+                    <Layers size={11} />
+                    <span>{flyer.images.length} Lâminas</span>
                   </div>
                 )}
 

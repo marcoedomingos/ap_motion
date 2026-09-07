@@ -18,7 +18,7 @@ const FAQ_ITEMS: FAQItem[] = [
       'O prazo médio varia de acordo com a complexidade e duração do projeto:',
     points: [
       'Vídeos comerciais para Reels / Redes Sociais: 3 a 7 dias úteis após validação do briefing.',
-      'Edição de vídeo avançada, animações e vinhetas personalizadas: 1 a 2 semanas.',
+      'Edição de vídeo avançada, animações e efeitos visuais personalizados: 1 a 2 semanas.',
       'Flyers digitais e peças estáticas para conversão: 24 a 48 horas.',
       'Trabalhos com prazo urgente (express) podem ser acordados diretamente via WhatsApp.',
     ],
@@ -71,7 +71,7 @@ const FAQ_ITEMS: FAQItem[] = [
       'Flyers digitais em alta resolução para WhatsApp, Instagram e Facebook.',
       'Packshots e encartes promocionais para produtos físicos e cosméticos.',
       'Carrosséis educativos e comerciais para aumento de retenção.',
-      'Identidade visual e vinhetas dinâmicas para canais e redes.',
+      'Identidade visual, carrosséis estratégicos e posts para redes sociais.',
     ],
   },
   {

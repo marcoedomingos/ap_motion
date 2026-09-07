@@ -12,7 +12,7 @@ export const ContactSection: React.FC = () => {
     'Vídeo Comercial / Promocional',
     'Motion Design & Animação',
     'Flyer Digital / Design Gráfico',
-    'Identidade Visual & Vinheta',
+    'Carrosséis & Design para Redes',
   ];
 
   const generateWhatsAppLink = () => {
@@ -37,9 +37,9 @@ export const ContactSection: React.FC = () => {
     {
       icon: <Mail size={20} />,
       label: 'Email',
-      value: 'contato@apmotion.ao',
+      value: 'aoponto40@gmail.com',
       sub: 'Briefings e propostas',
-      href: 'mailto:contato@apmotion.ao',
+      href: 'mailto:aoponto40@gmail.com',
     },
   ];
 
